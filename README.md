@@ -1,10 +1,10 @@
 # cw-logs-to-chime
 
-This serverless app... TODO
+This serverless app publishes AWS CloudWatch logs to AWS Chime based on a subscription filter.
 
 ## App Architecture
 
-TODO: arch diagram
+![App Architecture](https://github.com/keetonian/cw-logs-to-chime/raw/master/images/cw-logs-to-chime.png)
 
 ## Installation Instructions
 
@@ -14,14 +14,16 @@ TODO: arch diagram
 
 ## App Parameters
 
+1. `ChimeUrl` (required) - Webhook URL for integration with Chime
+1. `LogGroupName` (required) - Log group to listen to (has to be in same account and region)
+1. `FilterPattern` (optional) - Pattern for filtering log events. Default: ERROR
 1. `LogLevel` (optional) - Log level for Lambda function logging, e.g., ERROR, INFO, DEBUG, etc. Default: INFO
-1. ...
 
 ## App Outputs
 
-1. `MyFunctionName` - My Lambda function name.
-1. ...
+1. `LogsToChimeName` - Lambda function name.
+1. `LogsToChimeArn` - Lambda function ARN.
 
 ## License Summary
 
-This code is made available under the TODO license. See the LICENSE file.
+This code is made available under the MIT license. See the LICENSE file.
