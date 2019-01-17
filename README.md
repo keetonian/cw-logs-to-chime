@@ -12,6 +12,19 @@ This serverless app publishes AWS CloudWatch logs to AWS Chime based on a subscr
 1. Go to the app's page on the [Serverless Application Repository](https://serverlessrepo.aws.amazon.com/applications/arn:aws:serverlessrepo:us-east-1:289559741701:applications~cw-logs-to-chime) and click "Deploy"
 1. Provide the required app parameters (see parameter details below) and click "Deploy"
 
+### Chime Url
+To get a webhook URL for this application:
+* Navigate to Settings -> Manage webhooks
+* Select "Add Webhooks"
+* Name your webhook (this will be the display name in the chat room)
+* Copy the Url and paste it into the template parameter
+
+### Log Group Name
+You can find the name of the log group by navigating to CloudWatch logs on the AWS console. You can also pass it in as a parameter from another stack or another resource (e.g. default lambda log group names are `/aws/lambda/{lambda-function-name}`).
+
+### Filter Pattern
+CloudWatch logs allow you to filter logs based on a pattern. For more information, see the [AWS Documentation](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html).
+
 ## App Parameters
 
 1. `ChimeUrl` (required) - Webhook URL for integration with Chime
