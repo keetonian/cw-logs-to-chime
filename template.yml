@@ -23,10 +23,13 @@ Parameters:
     Description: Log level for Lambda function logging, e.g., ERROR, INFO, DEBUG, etc
     Default: INFO
   ChimeUrl:
+    Description: Webhook URL for integration with Chime
     Type: String
   LogGroupName:
+    Description: Log group to listen to (has to be in same account and region)
     Type: String
   FilterPattern:
+    Description: Pattern for filtering log events
     Type: String
     Default: ERROR
 
