@@ -45,7 +45,7 @@ init:
 test:
 	pipenv run flake8 $(SRC_DIR)
 	pipenv run pydocstyle $(SRC_DIR)
-	#pipenv run cfn-lint template.yml
+	pipenv run cfn-lint template.yml
 	pipenv run py.test --cov=$(SRC_DIR) --cov-fail-under=90 -vv test/unit
 
 compile: test
