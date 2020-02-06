@@ -10,6 +10,7 @@ JSON_HEADER = {'Content-Type': 'application/json'}
 
 def post_message(url, message):
     """Post a message to chime using a webhook url."""
+    message = "/code " + message
     data = {'Content': message}
     response = requests.post(url, data=json.dumps(data), headers=JSON_HEADER)
     LOG.info('Sent message: %s\nUrl: %s\nResponse: %s', message, url, response)
